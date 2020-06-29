@@ -36,7 +36,7 @@ async function signUp(request, response){
   let password = await UserModel.hashPass(request.body.password);
   let newUser = await User.create({ username: request.body.username, password: password, role: request.body.role});
   if (newUser){
-    let token = UserModel.generateToken({ username: request.body.username});
+    let token = await UserModel.generateToken({ username: request.body.username});
     response.cookie('token', token);
     response.header('token', token);
     response.send(token);

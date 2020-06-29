@@ -20,9 +20,8 @@ async function basicAuth(request, response, next) {
 
   // strings from our auth header
   let [authtype, authString] = request.headers.authorization.split(' ');
-  let [username, password] = base64.decode(authString).split(':');
+  let [username, password] = await base64.decode(authString).split(':');
 
-  // let verified = users[username] ? await bcrypt.compare(password, users[username].password) : false;
   let user = await UserModel.authenticateUser(username, password);
 
   if (user) {
