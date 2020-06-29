@@ -7,7 +7,7 @@
 
 - [submission PR](https://github.com/PaulDepew/authenticated-api-server)
 - [swagger.io]()
-- [Heroku Deployment]()
+- [Heroku Deployment](https://api-auth-server-test.herokuapp.com/)
 
 ### Setup
 
@@ -36,7 +36,7 @@ set SECRET = A.Secret.String.That.Only.You.Know
 
 #### Running the app
 
-npm start
+npm start 
   - Starts the server on your local host with the port you defined in you .env using nodemon
 
 
